@@ -1,23 +1,36 @@
-import logo from './logo.svg';
+import 'react-awesome-button/dist/styles.css';
 import './App.css';
 
+import { useState } from 'react';
+
 function App() {
+  const [contador, setContador] = useState(0);
+  //const [contador, setContador] = useState(0);
+  const incrementar = async () => {
+    console.log('Incremento');
+    const res = await fetch('http://localhost:5050/add')
+    const obj = await res.json();
+    console.log(obj);
+    console.log("Add");
+    setContador(obj['value']);
+  }
+
+  const decrementar = async () => {
+    console.log('Decremento');
+    const res = await fetch('http://localhost:5050/sub')
+    const obj = await res.json();
+    console.log(obj);
+    console.log("Sub");
+    setContador(obj['value']);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1> Contador: {contador} </h1>
+      <div>
+      <button className="custom-btn btn-3" onClick = {incrementar}><span> Incrementar </span></button>
+      <button className="custom-btn btn-7" onClick = {decrementar}><span> Decrementar </span></button>
+      </div>
     </div>
   );
 }
