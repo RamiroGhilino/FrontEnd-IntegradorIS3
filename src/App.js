@@ -19,6 +19,7 @@ function App() {
   }, []);
 
   const incrementar = async () => {
+    console.log("incrementar");
     const res = await fetch(process.env.REACT_APP_BACK_URL + '/add')
     const obj = await res.json();
     setContador(obj['value']);
