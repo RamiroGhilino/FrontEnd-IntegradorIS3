@@ -1,8 +1,7 @@
 import 'react-awesome-button/dist/styles.css';
 import './App.css';
+import Button from './components/button';
 
-
-// TODO hacer 1 solo repo con todo
 
 import { useEffect, useState } from 'react';
 
@@ -42,9 +41,9 @@ function App() {
     <div className="App">
       <h1> Contador: {contador} </h1>
       <div>
-      <button className="custom-btn btn-3" onClick = {incrementar}><span> Incrementar </span></button>
-      <button className="custom-btn btn-7" onClick = {decrementar}><span> Decrementar </span></button>
-      <button className="custom-btn btn-5" onClick = {reiniciar}><span> Reiniciar </span></button>
+      <Button id="btn-sum" className="custom-btn btn-3" onClick = {incrementar} value="Incrementar" /> 
+      <Button id="btn-sub" className="custom-btn btn-7" onClick = {decrementar} value= "Decrementar" />
+      <Button id="btn-restart" className="custom-btn btn-5" onClick = {reiniciar} value="Reiniciar" />
       </div>
     </div>
   );
