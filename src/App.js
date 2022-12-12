@@ -39,7 +39,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1> Contador: {contador} </h1>
+      <h1 id="contador"> Contador: {contador} </h1>
       <div>
       <Button id="btn-sum" className="custom-btn btn-3" onClick = {incrementar} value="Incrementar" /> 
       <Button id="btn-sub" className="custom-btn btn-7" onClick = {decrementar} value= "Decrementar" />
