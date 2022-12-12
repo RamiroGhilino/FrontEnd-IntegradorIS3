@@ -43,7 +43,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghilinoramiro/FrontEnd-IntegradorIS3:${{ github.run_number }}
+          tags: ghilinoramiro/frontend-integradoris3:${{ github.run_number }}
 
       - name: Install Railway
         run: npm i -g @railway/cli
