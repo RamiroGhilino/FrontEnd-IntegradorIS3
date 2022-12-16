@@ -81,12 +81,15 @@ jobs:
         with:
           repository: RamiroGhilino/Integracion-IS3
           path: Integracion-IS3
-      
+
+      - name: check files
+        run: ls -al
+
       - name: Change Directory
         run: cd Integracion-IS3
       
       - name: check files
-        run: ls 
+        run: ls -al
 
       - name: Use Node 19
         uses: actions/setup-node@v1
@@ -94,7 +97,7 @@ jobs:
           node-version: 19.x
 
       - name: Install packages
-        run: npm install codeceptjs playwright --save
+        run: npm ci
 
       - name: Run Integration Test
         run: npx codeceptjs run --steps
