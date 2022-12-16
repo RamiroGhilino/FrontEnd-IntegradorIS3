@@ -5,8 +5,9 @@ import Button from './components/button';
 test('Render Boton', () =>{
   render(<Button id="btn" className="customname" value="valor" />);
   const ButtonElement = screen.getByRole("button");
-  console.log(ButtonElement);
   expect(ButtonElement).toBeInTheDocument();
+  //Cambio en el test para probar caso de falla
+  // expect(ButtonElement.id).toMatch("button");
   expect(ButtonElement.id).toMatch("btn");
   expect(ButtonElement.className).toMatch("customname");
   const SpanElement = screen.getByText("valor");
