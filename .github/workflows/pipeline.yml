@@ -94,5 +94,5 @@ jobs:
       - name: Install packages
         run: npm ci --include=dev
 
-      -name: Run Integration Test
+      - name: Run Integration Test
         run: npx codeceptjs run --steps
