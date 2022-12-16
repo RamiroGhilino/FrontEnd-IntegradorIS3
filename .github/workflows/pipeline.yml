@@ -82,13 +82,19 @@ jobs:
           repository: RamiroGhilino/Integracion-IS3
           path: Integracion-IS3
 
-      - name: check files
+      - name: check files 1
         run: ls -al
+
+      - name: donde estoy parado 1
+        run: pwd 
 
       - name: Change Directory
         run: cd Integracion-IS3
       
-      - name: check files
+      - name: donde estoy parado 2
+        run: pwd 
+
+      - name: check files 2
         run: ls -al
 
       - name: Use Node 19
