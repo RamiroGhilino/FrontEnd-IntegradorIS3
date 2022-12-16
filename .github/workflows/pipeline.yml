@@ -71,3 +71,28 @@ jobs:
         run: railway up -s frontend 
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+
+  integration-test:
+    runs-on: ubuntu-latest
+    needs: deploy-to-railway
+    steps:
+      - name: Get Integration Test Repository
+        uses: actions/checkout@v3
+        with:
+          repository: RamiroGhilino/Integracion-IS3
+          path: Integracion-IS3
+      
+      - name: Await to Railway update
+        run: sleep 5s
+        shell: bash
+
+      - name: Use Node 19
+        uses: actions/setup-node@v1
+        with:
+          node-version: 19.x
+
+      - name: Install packages
+        run: npm ci --include=dev
+
+      -name: Run Integration Test
+        run: npx codeceptjs run --steps
