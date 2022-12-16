@@ -93,4 +93,4 @@ jobs:
 
       - name: Run Integration Test
         working-directory: ./Integracion-IS3
-        run: HEADLESS=true npx codeceptjs run --steps
+        run: xvfb-run npx integration_test.js
