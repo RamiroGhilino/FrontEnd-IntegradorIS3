@@ -83,7 +83,7 @@ jobs:
           path: Integracion-IS3
       
       - name: Await to Railway update
-        run: sleep 5s
+        run: ls -al
         shell: bash
 
       - name: Use Node 19
