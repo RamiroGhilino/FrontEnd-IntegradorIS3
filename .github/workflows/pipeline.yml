@@ -85,6 +85,10 @@ jobs:
       - name: Change Directory
         run: cd Integracion-IS3
         shell: bash
+      
+      - name: check files
+        run: ls 
+        shell: bash
 
       - name: Use Node 19
         uses: actions/setup-node@v1
